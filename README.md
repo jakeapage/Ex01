@@ -3,9 +3,9 @@
 Welcome to CSE 332! This is your first programming assignment of the course. We will also help you get your computer set up for future assignments.
 
 "Guessing Game" is a game with two parties: the "chooser" and the "guesser":
-- The "chooser" picks a natural number larger than zero, and when given a guess, will return whether if the real answer is higher or lower. 
+- The "chooser" picks a natural number larger than zero, and when given a guess, will return whether if the real answer is higher or lower. When you submit your code for grading, we will provide our secret implementation of the chooser.
 - The "guesser" must guess what the number is by repeatedly making guesses to the "chooser" until the
-correct answer is found.
+correct answer is found. This is the class that you will be implementing.
 
 ## Tasks
 
@@ -31,7 +31,7 @@ hardcode.
 
 Open `src/main/java/Guesser.java` to get started. It might also be helpful to take a look at the `Chooser.java`
 interface; however, you should only edit the method `findNumber` in `Guesser.java`. When you are not sure about what behavior 
-to implement, be sure to check the method's comments _and_ any potential parent classes that it extends/implements -- this 
+to implement, be sure to check the class's comments _and_ any potential parent classes that it extends/implements -- this 
 technique will become extremely important in the projects.
 
 This repository will not contain the testing code for the staff `Chooser` which will be used to autograde your exercise.
