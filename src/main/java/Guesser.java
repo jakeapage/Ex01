@@ -10,7 +10,7 @@ public class Guesser {
      * @return The number that the "chooser" has chosen
      */
     // I want to be able to guess a random number and place it in a variable.
-    // Figure out if it is higher or lower, then make the number below it the ceiling or
+    // Figure  out if it is higher or lower, then make the number below it the ceiling or
     // number above it the floor. Keep choosing the middle number??
     public static BigInteger findNumber(Chooser c) {
         BigInteger currGuess = new BigInteger(100, new Random());
