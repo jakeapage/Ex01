@@ -1,4 +1,5 @@
 import java.math.BigInteger;
+import java.util.Random;
 
 public class Guesser {
     /**
@@ -8,9 +9,22 @@ public class Guesser {
      * @param c The "chooser" that has chosen a number you must guess.
      * @return The number that the "chooser" has chosen
      */
+    // I want to be able to guess a random number and place it in a variable.
+    // Figure out if it is higher or lower, then make the number below it the ceiling or
+    // number above it the floor. Keep choosing the middle number??
     public static BigInteger findNumber(Chooser c) {
-        // Tip: If you're not sure how to work with BigInteger numbers, we encourage
-        // you to look up its Javadoc online.
-        throw new RuntimeException("Remove this line and implement me!");
+        BigInteger currGuess = new BigInteger(100, new Random());
+        BigInteger low = new BigInteger("0");
+        BigInteger high = new BigInteger("0");
+        while (!c.guess(currGuess).equals("correct")) {
+            if (c.guess(currGuess).equals("higher")) {
+                low = low.subtract(low).add(currGuess);
+                currGuess = currGuess.add(currGuess);
+            } else {
+                high = high.subtract(high).add(currGuess);
+                currGuess = high.add(currGuess).divide(new BigInteger("10"));
+            }
+        }
+        return currGuess;
     }
 }
