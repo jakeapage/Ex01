@@ -20,9 +20,14 @@ public class Guesser {
             if (c.guess(currGuess).equals("higher")) {
                 low = low.subtract(low).add(currGuess);
                 currGuess = currGuess.add(currGuess);
+                if (high.intValue() == 0) {
+                    currGuess = currGuess.add(currGuess);
+                } else {
+                    currGuess = high.add(currGuess).divide(new BigInteger("10"));
+                }
             } else {
                 high = high.subtract(high).add(currGuess);
-                currGuess = high.add(currGuess).divide(new BigInteger("10"));
+                currGuess = low.add(currGuess).divide(new BigInteger("10"));
             }
         }
         return currGuess;
